@@ -32,7 +32,7 @@ function App() {
           <LineChart
             widgetId="line-1"
             settings={{ requestBuffer: 1 }}
-            viewport={{ duration: '5m', group: 'in-sync' }}
+            viewport={{ duration: '5m' }}
             queries={[
               query.timeSeriesData({
                 assets: [
@@ -73,7 +73,7 @@ function App() {
           <ScatterChart
             widgetId="line-3"
             settings={{ requestBuffer: 1 }}
-            viewport={{ duration: '5m', group: 'in-sync' }}
+            viewport={{ duration: '5m' }}
             queries={[
               query.timeSeriesData({
                 assets: [
