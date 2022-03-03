@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import './App.css';
 import { initialize, toId } from '@iot-app-kit/source-iotsitewise';
-import { LineChart, BarChart, ScatterChart, Kpi, StatusTimeline, StatusGrid, ResourceExplorer, Table, WebglContext } from '@iot-app-kit/react-components';
+import { LineChart, BarChart, ScatterChart, Kpi, StatusTimeline, StatusGrid, ResourceExplorer, WebglContext } from '@iot-app-kit/react-components';
 const { defineCustomElements } = require('@iot-app-kit/components/loader');
 defineCustomElements();
 
@@ -162,31 +162,6 @@ function App() {
               ]}
             />
           </div>
-        </div>
-        <div style={{ width: "400px", height: "400px" }}>
-          <Table
-            widgetId="scatter-1"
-            tableColumns={[
-              { header: 'Torque',
-                rows: [
-                  toId({ assetId: DEMO_TURBINE_ASSET_1, propertyId: DEMO_TURBINE_ASSET_1_PROPERTY_2 }),
-                ]
-              }
-            ]}
-            viewport={{ duration: '5m', yMin: 0, yMax: 1 }}
-            queries={[
-              query.timeSeriesData({
-                assets: [
-                  {
-                    assetId: DEMO_TURBINE_ASSET_1,
-                    properties: [
-                      { propertyId: DEMO_TURBINE_ASSET_1_PROPERTY_2 },
-                    ],
-                  },
-                ],
-              }),
-            ]}
-          />
         </div>
       </div>
       <WebglContext />
